@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html ng-app="vidnight">
+  <head>
+    <meta charset="utf-8" />
+    <title>Vidnight-Angular</title>
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-route/angular-route.js"></script>
+    <script src="bower_components/angular-mocks/angular-mocks.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script><!-- load jquery -->
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script><!-- load angular -->
+    <script src="app/core.js"></script>
+  </head>
+
+  <body ng-controller="appController">
+    <h1>vidnight-angular</h1>
+
+  <!-- Create new board -->
+    <div>
+      <form>
+        <input type="text" name="input" ng-model="input.text">
+        <input type="submit" name="submit" value="new board" ng-click="addBoard()">
+      </form>
+    </div>
+
+
+  <!-- Display all boards -->
+    <div class="board" ng-repeat="board in boards">
+      {{ board.title }}
+      <span><button ng-click="removeBoard(board._id)">Remove Board</button></span>
+    </div>
+
+  <!-- NG VIEW -->
+  <div ng-view>
+
+  </body>
+</html>
