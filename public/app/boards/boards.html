@@ -11,10 +11,17 @@
   <!-- Display all boards -->
     <div ng-repeat="board in boards">
       <h3 class="title font">{{ board.title }}</h3>
-      <div class="board" ng-style="{'background-image': 'url(' + board.image + ')'}"></div>
+      <a ng-href="#/boards/{{board._id}}">
+        <div class="board" ng-style="{'background-image': 'url(' + board.image + ')'}">
+        </div>
+      </a>
       <div class="wrapper">
-        <button ng-click="removeBoard(board._id)" class="button font">Remove Board</button>
+          <button ng-click="removeBoard(board._id)" class="button font">Remove Board
+          </button>
       </div>
+
     </div>
+
+
 
 

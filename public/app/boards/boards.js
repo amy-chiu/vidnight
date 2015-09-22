@@ -1,18 +1,39 @@
 angular.module('vidnight.boards', [])
 
-.controller('boardsController', function($scope, $http) {
-  console.log("hitting controller")
+.controller('boardsController', function($scope, $http, BoardsFactory, $routeParams) {
+  $scope.boards = [];
+  // BoardsFactory.boards;
   $scope.input = {};
 
   // $scope = {
-  //   input: {text: ""},
-  //   boards: [{board}]
+  //   boards: []
+  //   input: {
+  //     text: ""
+  //     image: ""
+  //   }
+
   // }
+
+  // $scope.boards.push({
+  //   title: $scope.input.text,
+  //   image: $scope.input.image,
+  //   pins: [
+  //     {link: "www.youtube.com", description: "hello i love this video"},
+  //     {link: "www.amazon.com", description: "hello i love amazon"}
+  //   ]
+  // })
+
   $scope.getBoards = function() {
     $http.get('/boards')
     .success(function(data){
+      console.log("GET BOARDS DATA")
       console.log(data)
       $scope.boards = data;
+      console.log("BOARDS")
+      console.log($scope.boards);
+      console.log("BOARD ID");
+      console.log($scope.board_id);
+      //need to make this data accessible by boards and pins controller;
     })
     .error(function(data){
       console.log("Error: " + data);
@@ -22,9 +43,7 @@ angular.module('vidnight.boards', [])
   $scope.getBoards();
 
 
-
   $scope.addBoard = function(){
-
     var title = $scope.input.text.replace(/ /g,'')
 
     $http.get("http://api.giphy.com/v1/gifs/random?api_key=dc6zaTOxFJmzC&tag=" + title)

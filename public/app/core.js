@@ -1,6 +1,7 @@
 angular.module('vidnight', [
+  'vidnight.services',
   'vidnight.boards',
-  // 'vidnight.pins',
+  'vidnight.pins',
   'ngRoute'
 ])
 .config(function($routeProvider){
@@ -9,10 +10,10 @@ angular.module('vidnight', [
     templateUrl: 'app/boards/boards.html',
     controller: 'boardsController'
   })
-  // .when('/pins/{board_id}', {
-  //   templateUrl: 'app/pins/pins.html',
-  //   controller: 'pinsController'
-  // })
+  .when('/boards/:boardId', {
+    templateUrl: 'app/pins/pins.html',
+    controller: 'pinsController'
+  })
   .otherwise({
     redirectTo: '/boards'
   })
