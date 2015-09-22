@@ -1,15 +1,20 @@
 
   <!-- Create new board -->
     <div>
-      <form>
-        <input type="text" name="input" ng-model="input.text">
-        <input type="submit" name="submit" value="new board" ng-click="addBoard()">
+      <form class="board-form">
+        <input class="font" type="text" name="input" ng-model="input.text">
+        <button class="font" type="submit" name="submit" value="new board" ng-click="addBoard()">Create a board</button>
       </form>
     </div>
 
 
   <!-- Display all boards -->
-    <div class="board" ng-repeat="board in boards">
-      {{ board.title }}
-      <span><button ng-click="removeBoard(board._id)">Remove Board</button></span>
+    <div ng-repeat="board in boards">
+      <h3 class="title font">{{ board.title }}</h3>
+      <div class="board" ng-style="{'background-image': 'url(' + board.image + ')'}"></div>
+      <div class="wrapper">
+        <button ng-click="removeBoard(board._id)" class="button font">Remove Board</button>
+      </div>
     </div>
+
+

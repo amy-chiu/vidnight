@@ -17,6 +17,7 @@ var Schema = mongoose.Schema;
 var boardSchema = new Schema({
   title : String, 
   image : String,
+  img: String,
   pins: [{link: String, description: String}] 
 })
 var Board = mongoose.model('Board', boardSchema);
@@ -45,13 +46,12 @@ app.get('/boards', function(req,res) {
       res.send(err);
     }
     res.json(boards);
-    console.log("boards: " + boards)
   });
 });
 
 
 app.post('/boards', function(req, res) {
-  console.log(req.body)
+  console.log(req.body.image)
   console.log(req.body.text);
   Board.create({
     title: req.body.text,
@@ -82,8 +82,8 @@ app.post('/boards', function(req, res) {
 });
 
 app.delete('/boards/:board_id', function(req, res) {
-  console.log("i hit server delete")
-  console.log(req.params)
+  // console.log("i hit server delete")
+  // console.log(req.params)
 
   Board.remove({_id: req.params.board_id}, function(err, board) {
     if(err) {

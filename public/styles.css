@@ -1,9 +1,37 @@
+.vidnight-title {
+  text-align: center;
+  font-family: 'Josefin Slab', serif;
+  font-size: 60px
+}
+
+.vidnight-subtitle {
+  text-align: center;
+  font-family: 'Josefin Slab', serif;
+  font-size: 30px
+}
+
+.font {
+  font-family: 'Josefin Slab', serif;
+}
+
+.board-form {
+  text-align: center;
+}
+
 .board {
-
-padding: 50px 50px 50px 50px;
-margin: 50px 300px 50px 300px;
+padding: 120px 70px 120px 70px;
+margin: 30px 400px 30px 400px;
 text-align: center;
-border-style: solid;
+border-style: thin;
+border-radius: 7px;
 border-width: 5px;
+background-image: 
+}
 
+.title {
+  text-align: center;
+}
+
+.wrapper {
+  text-align: center;
 }
