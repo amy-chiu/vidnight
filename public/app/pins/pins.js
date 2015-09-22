@@ -3,7 +3,7 @@ angular.module('vidnight.pins', [])
 .controller('pinsController', function($scope, $routeParams, $http, BoardsFactory) {
 
   $scope.input = {};
-  $scope.pins = [];
+  $scope.pins;
   $scope.boards = BoardsFactory.boards[$routeParams.id];
   $scope.boardId = $routeParams.boardId;
 
