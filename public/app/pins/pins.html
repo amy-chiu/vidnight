@@ -10,8 +10,8 @@
 
 
 <!-- Display all boards -->
-  <div class="pin" ng-repeat="pin in pins">
-    {{ pin }}
+  <div class="pin" ng-repeat="pin in pins"><a ng-href="{{ pin }}" target="_blank">{{ pin }}</a>
+    
     <span><button ng-click="removePin(pin._id)">Remove pin</button></span>
   </div>
 

@@ -10,7 +10,7 @@
 
   <!-- Display all boards -->
     <div ng-repeat="board in boards">
-      <h3 class="title font">{{ board.title }}</h3>
+      <h2 class="title font">{{ board.title }}</h2>
       <a ng-href="#/boards/{{board._id}}">
         <div class="board" ng-style="{'background-image': 'url(' + board.image + ')'}">
         </div>
