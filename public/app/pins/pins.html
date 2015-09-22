@@ -1,0 +1,18 @@
+<div>
+
+<!-- Create new link -->
+  <div>
+    <form>
+      <input type="text" name="input" ng-model="input.link">
+      <input type="submit" name="submit" value="new pin" ng-click="addPin()">
+    </form>
+  </div>
+
+
+<!-- Display all boards -->
+  <div class="pin" ng-repeat="pin in pins">
+    {{ pin.link }}
+    <span><button ng-click="removePin(pin._id)">Remove pin</button></span>
+  </div>
+
+</div>

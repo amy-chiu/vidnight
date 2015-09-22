@@ -2,36 +2,27 @@
 <html ng-app="vidnight">
   <head>
     <meta charset="utf-8" />
-    <title>Vidnight-Angular</title>
+    <title>vidnight</title>
     <link rel="stylesheet" type="text/css" href="styles.css" />
     <script src="bower_components/angular/angular.js"></script>
     <script src="bower_components/angular-route/angular-route.js"></script>
     <script src="bower_components/angular-mocks/angular-mocks.js"></script>
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script><!-- load jquery -->
-    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script><!-- load angular -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.10/angular-ui-router.js"></script>
+    
+
+    <script src="app/pins/pins.js"></script>
+    <script src="app/boards/boards.js"></script>
     <script src="app/core.js"></script>
   </head>
 
-  <body ng-controller="appController">
-    <h1>vidnight-angular</h1>
+  <body>
+    <h1>vidnight</h1>
 
-  <!-- Create new board -->
-    <div>
-      <form>
-        <input type="text" name="input" ng-model="input.text">
-        <input type="submit" name="submit" value="new board" ng-click="addBoard()">
-      </form>
-    </div>
-
-
-  <!-- Display all boards -->
-    <div class="board" ng-repeat="board in boards">
-      {{ board.title }}
-      <span><button ng-click="removeBoard(board._id)">Remove Board</button></span>
-    </div>
-
-  <!-- NG VIEW -->
-  <div ng-view>
+  <!-- NG VIEW to switch between views (<ng-view></ng-view>) -->
+    
+    <div ng-view></div>
+  
 
   </body>
 </html>

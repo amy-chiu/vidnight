@@ -1,0 +1,15 @@
+
+  <!-- Create new board -->
+    <div>
+      <form>
+        <input type="text" name="input" ng-model="input.text">
+        <input type="submit" name="submit" value="new board" ng-click="addBoard()">
+      </form>
+    </div>
+
+
+  <!-- Display all boards -->
+    <div class="board" ng-repeat="board in boards">
+      {{ board.title }}
+      <span><button ng-click="removeBoard(board._id)">Remove Board</button></span>
+    </div>
