@@ -132,23 +132,28 @@ app.get('/boards/:board_id', function(req, res) {
       res.send(err)
     }
     var pinIds = board[0].pins;
-    var pinArr = [];
+    var linkArr = [];
 
 
       for(var i = 0; i < pinIds.length; i++) {
         Pin.find({_id: pinIds[i]}, function(err, pin) {
           if(err) {res.send(err)};
-          var link = pin[0].link
-          pinArr.push(link);
-          console.log(pin[0].link)
+          var link = pin[0].link;
+          linkArr.push(link);
+          console.log(pin[0].link);
+          console.log(linkArr);
+          
+          if(linkArr.length === pinIds.length) {
+            res.send(linkArr);
+          }
         })
+        
       }
       
 
-    // if(pinArr.length === pinIds.length) {
-
-    //   res.send(pinArr);
-    // }
+      
+      
+    
   })
   
 });
